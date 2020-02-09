@@ -1,0 +1,6 @@
+framework module Pods_CitySounds {
+  umbrella header "Pods-CitySounds-umbrella.h"
+
+  export *
+  module * { export * }
+}

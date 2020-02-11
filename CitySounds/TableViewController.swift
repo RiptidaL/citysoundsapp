@@ -15,8 +15,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var eventList: UITableView!
     
-    
-    var eventArray = [String]()
+    //Placeholder for an Array of "Event" objects
+    var eventArray = [Event]()
+    var ref = Database.database().reference()
     
     
     override func viewDidLoad() {
@@ -25,8 +26,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         eventList.delegate = self
         eventList.dataSource = self
         
-        FirebaseApp.configure()
-        let ref = Database.database().reference()
+        retrieveDatafromFirebase()
+        
+        
         
        
         
@@ -40,9 +42,31 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         eventList.rowHeight = 100
-        let cell = eventList.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
-    
+        let cell = eventList.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+        cell.eventNameCellLabel.text = eventArray[indexPath.row].name
+        cell.eventLocationCellLabel.text = eventArray[indexPath.row].location
         return cell
+    }
+    
+    
+    func retrieveDatafromFirebase() {
+        
+        //Function from the Firebase Docs - "snapshot" is a variable that contains the returned value of what is in the database under the "upcoming" node
+        ref.child("upcoming").observe(.childAdded) { (snapshot) in
+            
+            //Converting the returned value to a dictionary so that we can access specific values
+            let data = snapshot.value as? NSDictionary
+            
+            //Creating an object of the "Event" class
+            let reference = Event()
+            
+            //Access Name and Location of the returned dictionary value 
+            reference.name = data!["Name"] as! String
+            reference.location = data!["Location"] as! String
+            self.eventArray.append(reference)
+            self.eventList.reloadData()
+            
+        }
     }
     
     

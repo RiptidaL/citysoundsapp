@@ -12,6 +12,12 @@ class Event {
     var key: String = ""
     var name: String = ""
     var location: String = ""
+    var address: String = ""
+    var date: String = ""
+    var price: String = ""
+    var artists: String = ""
+    var genre: String = ""
+    
     
 }
 

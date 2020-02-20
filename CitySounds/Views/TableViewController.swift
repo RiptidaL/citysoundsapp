@@ -15,6 +15,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var eventList: UITableView!
     
+
+    
     //Placeholder for an Array of "Event" objects
     var eventArray = [Event]()
     var ref = Database.database().reference()
@@ -23,11 +25,11 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+                
         eventList.delegate = self
         eventList.dataSource = self
         
         retrieveDatafromFirebase()
-        
         
         
        
@@ -41,10 +43,13 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        eventList.rowHeight = 100
+        eventList.rowHeight = 250
         let cell = eventList.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         cell.eventNameCellLabel.text = eventArray[indexPath.row].name
         cell.eventLocationCellLabel.text = eventArray[indexPath.row].location
+        cell.eventDateCell.text = eventArray[indexPath.row].date
+        cell.eventGenreCellLabel.text = eventArray[indexPath.row].genre
+        
         return cell
     }
     
@@ -63,6 +68,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             //Access Name and Location of the returned dictionary value 
             reference.name = data!["Name"] as! String
             reference.location = data!["Location"] as! String
+            reference.date = data!["Date"] as! String
+            reference.genre = data!["Genre"] as! String
+            
             self.eventArray.append(reference)
             self.eventList.reloadData()
             

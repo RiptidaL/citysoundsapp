@@ -17,16 +17,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
+    @IBOutlet weak var donothaveaccountButton: UIButton!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
+        self.navigationItem.setHidesBackButton(true, animated: true)
         
         // small nav title
-        //navigationItem.largeTitleDisplayMode = .never
+        navigationItem.largeTitleDisplayMode = .never
         
         
         setUpElements()
@@ -41,6 +44,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         Utilities.styleTextField(emailLoginTextField)
         Utilities.styleTextField(passwordLoginTextField)
         Utilities.styleFilledButton(loginButton)
+        Utilities.styleHollowButton(donothaveaccountButton)
         
     }
     

@@ -19,12 +19,22 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     
+    @IBOutlet weak var alreadyHaveAccountButton: UIButton!
+    
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        // small nav title
+        navigationItem.largeTitleDisplayMode = .never
+        
+        
         setUpElements()
         
         
@@ -43,6 +53,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(signUpButton)
+        Utilities.styleHollowButton(alreadyHaveAccountButton)
         
     }
     

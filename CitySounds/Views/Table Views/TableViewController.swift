@@ -28,6 +28,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
            
         self.navigationItem.setHidesBackButton(true, animated: true)
+        navigationItem.largeTitleDisplayMode = .always
         
         eventList.delegate = self
         eventList.dataSource = self

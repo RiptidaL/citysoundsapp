@@ -108,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2745" y="1118"/>
+            <point key="canvasLocation" x="1184" y="1908"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="5Qp-Bh-GTZ">
@@ -174,9 +174,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cC-ZB-UjG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="1118"/>
+            <point key="canvasLocation" x="-13" y="1118"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Sign Up-->
         <scene sceneID="FWb-2M-odk">
             <objects>
                 <viewController id="B5Q-vX-MKF" customClass="SignUpViewController" customModule="CitySounds" customModuleProvider="target" sceneMemberID="viewController">
@@ -249,7 +249,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="taV-4E-h65"/>
                     </view>
-                    <navigationItem key="navigationItem" id="b5W-2m-Gye"/>
+                    <navigationItem key="navigationItem" title="Sign Up" id="b5W-2m-Gye"/>
                     <connections>
                         <outlet property="emailTextField" destination="2tc-8E-eSK" id="vS4-ac-nCz"/>
                         <outlet property="errorLabel" destination="NVS-E3-1uZ" id="ZD9-2B-Tjg"/>
@@ -261,9 +261,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPi-nN-t1V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="797"/>
+            <point key="canvasLocation" x="359" y="1908"/>
         </scene>
-        <!--City Sounds-->
+        <!--Upcoming Events-->
         <scene sceneID="Cq7-BI-5DK">
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="ESc-he-FIN" customClass="TableViewController" customModule="CitySounds" customModuleProvider="target" sceneMemberID="viewController">
@@ -331,9 +331,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="08K-9n-OBh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="City Sounds" id="FOt-WC-OEX">
+                    <navigationItem key="navigationItem" title="Upcoming Events" id="FOt-WC-OEX">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="lock.fill" catalog="system" id="gTW-oR-YXu">
+                            <barButtonItem title="Sign In/Out" id="gTW-oR-YXu">
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </barButtonItem>
                             <barButtonItem systemItem="add" id="owy-hA-E83">
@@ -350,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LML-4B-RsH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1899" y="1118"/>
+            <point key="canvasLocation" x="1183" y="1118"/>
         </scene>
         <!--Login-->
         <scene sceneID="nvo-as-CXN">
@@ -422,7 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6A3-jF-PM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900" y="1537"/>
+            <point key="canvasLocation" x="-442" y="1908"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pZD-R0-nhD">
@@ -449,6 +449,5 @@
         <image name="CSNEWLOGOV2" width="2000" height="2000"/>
         <image name="cslogo" width="1868" height="537"/>
         <image name="eventplaceholder" width="1200" height="800"/>
-        <image name="lock.fill" catalog="system" width="64" height="64"/>
     </resources>
 </document>

@@ -24,7 +24,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        navigationItem.largeTitleDisplayMode = .never
+        
+        // small nav title
+        //navigationItem.largeTitleDisplayMode = .never
+        
+        
         setUpElements()
     }
     
@@ -46,14 +50,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.touchesBegan(touches, with: event)
     }
     
-     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n"
-        {
-            textView.resignFirstResponder()
-            return false
-        }
-        return true
-    }
+     
     
     
     

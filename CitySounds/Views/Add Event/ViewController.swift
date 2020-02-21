@@ -39,7 +39,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.largeTitleDisplayMode = .never
+        //small nav title
+        //navigationItem.largeTitleDisplayMode = .never
         
         ref = Database.database().reference()
         self.eventDate.delegate = self

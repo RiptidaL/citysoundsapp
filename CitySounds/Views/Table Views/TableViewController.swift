@@ -17,6 +17,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
 
     
+    
+    
     //Placeholder for an Array of "Event" objects
     var eventArray = [Event]()
     var ref = Database.database().reference()
@@ -24,7 +26,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+           
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
         eventList.delegate = self
         eventList.dataSource = self
         

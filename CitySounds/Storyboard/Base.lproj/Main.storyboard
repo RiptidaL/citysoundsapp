@@ -108,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1184" y="1908"/>
+            <point key="canvasLocation" x="1787" y="1564"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="5Qp-Bh-GTZ">
@@ -119,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qfk-QM-RCW">
-                                <rect key="frame" x="40" y="84" width="334" height="570"/>
+                                <rect key="frame" x="40" y="136" width="334" height="570"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CSNEWLOGOV2" translatesAutoresizingMaskIntoConstraints="NO" id="o48-DZ-0F7">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="400"/>
@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPi-nN-t1V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="1908"/>
+            <point key="canvasLocation" x="390" y="2531"/>
         </scene>
         <!--Upcoming Events-->
         <scene sceneID="Cq7-BI-5DK">
@@ -271,9 +271,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Mb-9g-OCf">
-                                <rect key="frame" x="0.0" y="88" width="414" height="648"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Mb-9g-OCf">
+                                <rect key="frame" x="0.0" y="96" width="414" height="640"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="250" id="frB-Kj-5ed" customClass="TableViewCell" customModule="CitySounds" customModuleProvider="target">
@@ -329,14 +328,24 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Mb-9g-OCf" firstAttribute="leading" secondItem="08K-9n-OBh" secondAttribute="leading" id="QLP-Mf-yyh"/>
+                            <constraint firstItem="6Mb-9g-OCf" firstAttribute="top" secondItem="08K-9n-OBh" secondAttribute="top" id="ZPx-j4-aJf"/>
+                            <constraint firstItem="6Mb-9g-OCf" firstAttribute="bottom" secondItem="08K-9n-OBh" secondAttribute="bottom" id="c0M-BE-V4t"/>
+                            <constraint firstItem="6Mb-9g-OCf" firstAttribute="trailing" secondItem="08K-9n-OBh" secondAttribute="trailing" id="pkv-1R-0PO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="08K-9n-OBh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Upcoming Events" id="FOt-WC-OEX">
                         <rightBarButtonItems>
-                            <barButtonItem title="Sign In/Out" id="gTW-oR-YXu">
+                            <barButtonItem title="Sign Out" image="arrowshape.turn.up.right.fill" catalog="system" id="dqU-c7-AtR"/>
+                            <barButtonItem title="Login" image="person.fill" catalog="system" id="gTW-oR-YXu">
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="FQQ-8u-Pj8" kind="show" id="bKO-T8-T9A"/>
+                                </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="add" id="owy-hA-E83">
+                            <barButtonItem image="calendar.badge.plus" catalog="system" id="owy-hA-E83">
                                 <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="qrW-ax-TPg"/>
@@ -350,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LML-4B-RsH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1183" y="1118"/>
+            <point key="canvasLocation" x="855" y="1564"/>
         </scene>
         <!--Login-->
         <scene sceneID="nvo-as-CXN">
@@ -422,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6A3-jF-PM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-442" y="1908"/>
+            <point key="canvasLocation" x="-496" y="2553"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pZD-R0-nhD">
@@ -430,8 +439,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fVY-NH-sod" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="HHq-ak-CGw"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JPc-WT-uG5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="JPc-WT-uG5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -447,7 +456,13 @@
     </scenes>
     <resources>
         <image name="CSNEWLOGOV2" width="2000" height="2000"/>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="64" height="52"/>
+        <image name="calendar.badge.plus" catalog="system" width="64" height="50"/>
         <image name="cslogo" width="1868" height="537"/>
         <image name="eventplaceholder" width="1200" height="800"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bKO-T8-T9A"/>
+    </inferredMetricsTieBreakers>
 </document>

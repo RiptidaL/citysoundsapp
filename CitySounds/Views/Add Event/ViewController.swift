@@ -21,7 +21,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var eventPrice: UITextField!
     @IBOutlet weak var eventGenre: UITextField!
     @IBOutlet weak var eventArtists: UITextField!
+    @IBOutlet weak var eventTime: UITextField!
+    
     @IBOutlet weak var errorLabel: UILabel!
+    
+    
     
     @IBOutlet weak var submitEvent: UIButton!
     
@@ -50,6 +54,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.eventPrice.delegate = self
         self.eventGenre.delegate = self
         self.eventArtists.delegate = self
+        self.eventTime.delegate = self
         
         setUpElements()
         
@@ -68,6 +73,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         Utilities.styleTextField(eventPrice)
         Utilities.styleTextField(eventGenre)
         Utilities.styleTextField(eventArtists)
+        Utilities.styleTextField(eventTime)
         Utilities.styleFilledButton(submitEvent)
         
         
@@ -91,12 +97,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.ref.child("upcoming").child(uniqueID).setValue(["Name":eventName.text,
                                                              "Location": eventLocation.text,
                                                              "Date": eventDate.text,
+                                                             "Time": eventTime.text,
                                                              "Genre": eventGenre.text,
                                                              "Address": eventLocationAddress.text,
                                                              "Price": eventPrice.text,
                                                              "Artists": eventArtists.text
         ])
         
+        
+        self.performSegue(withIdentifier: "goToEvents", sender: sender)
     }
     
     

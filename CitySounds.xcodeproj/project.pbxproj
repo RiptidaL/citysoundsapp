@@ -23,13 +23,14 @@
 		D2F857EF23FE6A7C008A0195 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F857EE23FE6A7C008A0195 /* WelcomeViewController.swift */; };
 		D2F857F123FE6A8A008A0195 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F857F023FE6A8A008A0195 /* SignUpViewController.swift */; };
 		D2F857F623FE7D26008A0195 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F857F523FE7D25008A0195 /* Constants.swift */; };
+		D2F857F923FF7D11008A0195 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F857F823FF7D11008A0195 /* EventDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		95BBA503F281491C61CF9006 /* Pods_CitySounds.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CitySounds.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BBD4953421CE19B4F2BFDDE /* Pods-CitySounds.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitySounds.debug.xcconfig"; path = "Target Support Files/Pods-CitySounds/Pods-CitySounds.debug.xcconfig"; sourceTree = "<group>"; };
 		D16E50C15F2C2568D21FCFC5 /* Pods-CitySounds.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitySounds.release.xcconfig"; path = "Target Support Files/Pods-CitySounds/Pods-CitySounds.release.xcconfig"; sourceTree = "<group>"; };
-		D278D14623EF823E0061495A /* CitySounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitySounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D278D14623EF823E0061495A /* City Sounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "City Sounds.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D278D14923EF823E0061495A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D278D14B23EF823E0061495A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D278D14D23EF823E0061495A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		D2F857EE23FE6A7C008A0195 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D2F857F023FE6A8A008A0195 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D2F857F523FE7D25008A0195 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D2F857F823FF7D11008A0195 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,7 @@
 		D278D14723EF823E0061495A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D278D14623EF823E0061495A /* CitySounds.app */,
+				D278D14623EF823E0061495A /* City Sounds.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,7 +118,7 @@
 			children = (
 				D2F857F723FF5FA7008A0195 /* Navigation Controller */,
 				D2F857F223FE6A9A008A0195 /* Add Event */,
-				D2F857F323FE6AAF008A0195 /* Table Views */,
+				D2F857F323FE6AAF008A0195 /* Event Views */,
 				D2F857F423FE6ABA008A0195 /* Login SignUp */,
 			);
 			path = Views;
@@ -149,13 +151,14 @@
 			path = "Add Event";
 			sourceTree = "<group>";
 		};
-		D2F857F323FE6AAF008A0195 /* Table Views */ = {
+		D2F857F323FE6AAF008A0195 /* Event Views */ = {
 			isa = PBXGroup;
 			children = (
 				D278D16323EF94550061495A /* TableViewCell.swift */,
 				D278D16123EF93510061495A /* TableViewController.swift */,
+				D2F857F823FF7D11008A0195 /* EventDetailViewController.swift */,
 			);
-			path = "Table Views";
+			path = "Event Views";
 			sourceTree = "<group>";
 		};
 		D2F857F423FE6ABA008A0195 /* Login SignUp */ = {
@@ -202,7 +205,7 @@
 			);
 			name = CitySounds;
 			productName = CitySounds;
-			productReference = D278D14623EF823E0061495A /* CitySounds.app */;
+			productReference = D278D14623EF823E0061495A /* City Sounds.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -305,6 +308,7 @@
 				D278D16423EF94550061495A /* TableViewCell.swift in Sources */,
 				D278D14E23EF823E0061495A /* ViewController.swift in Sources */,
 				D2F857F123FE6A8A008A0195 /* SignUpViewController.swift in Sources */,
+				D2F857F923FF7D11008A0195 /* EventDetailViewController.swift in Sources */,
 				D278D14A23EF823E0061495A /* AppDelegate.swift in Sources */,
 				D278D14C23EF823E0061495A /* SceneDelegate.swift in Sources */,
 				D278D16A23F098410061495A /* Event.swift in Sources */,
@@ -462,7 +466,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.riptidal.CitySounds;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "City Sounds";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -481,7 +485,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.riptidal.CitySounds;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "City Sounds";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

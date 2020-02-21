@@ -15,7 +15,8 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var eventDateCell: UILabel!
     @IBOutlet weak var eventPicture: UIImageView!
     @IBOutlet weak var eventGenreCellLabel: UILabel!
-    
+    @IBOutlet weak var eventTimeCellLabel: UILabel!
+    @IBOutlet weak var eventPriceCellLabel: UILabel!
     
     
     

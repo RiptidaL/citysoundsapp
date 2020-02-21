@@ -23,6 +23,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    // Hide the Navigation Bar
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+        }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+    // Show the Navigation Bar
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
+        }
+    
+    
     
     
     override func viewDidLoad() {
@@ -30,6 +43,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated: true)
+        
         
         // small nav title
         navigationItem.largeTitleDisplayMode = .never
@@ -63,6 +77,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
      
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     
     
     
@@ -134,7 +153,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     }
                 
                      // Transition to home screen
-                    self.transitionToHome()
+                    self.performSegue(withIdentifier: "goToEvents", sender: sender)
                     
                 }
                 
@@ -159,12 +178,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         errorLabel.alpha = 1
     }
 
-    func transitionToHome() {
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? TableViewController
-        
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
-        
-    }
+    
     
 }

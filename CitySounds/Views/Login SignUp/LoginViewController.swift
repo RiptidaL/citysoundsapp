@@ -21,12 +21,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    // Hide the Navigation Bar
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+        }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+    // Show the Navigation Bar
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
+        }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated: true)
+        
         
         // small nav title
         navigationItem.largeTitleDisplayMode = .never
@@ -54,6 +73,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.touchesBegan(touches, with: event)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
      
     
     
@@ -75,7 +98,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 self.errorLabel.alpha = 1
             } else {
                 
-                   self.transitionToHome()
+                self.performSegue(withIdentifier: "goToEvents", sender: sender)
+                
+                
                     
                 }
                 
@@ -90,14 +115,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         errorLabel.alpha = 1
     }
     
-    func transitionToHome() {
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? TableViewController
-        
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
-        
-    }
     
+   
     
     
 

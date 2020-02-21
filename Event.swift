@@ -14,6 +14,7 @@ class Event {
     var location: String = ""
     var address: String = ""
     var date: String = ""
+    var time: String = ""
     var price: String = ""
     var artists: String = ""
     var genre: String = ""

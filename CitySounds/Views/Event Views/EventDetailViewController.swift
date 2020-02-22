@@ -21,25 +21,40 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var eventPrice: UILabel!
     @IBOutlet weak var eventArtists: UILabel!
         
+     
+   var eventDetails = Event()
     
     
-   
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+        getEventDetails()
         
         
         
+      
+//        retrieveDatafromFirebase()
         
         
         
     }
     
-    
-    
+
+    func getEventDetails() {
+        
+        eventName.text = eventDetails.name
+        eventDate.text = eventDetails.date
+        eventTime.text = eventDetails.time
+        eventLocation.text = eventDetails.location
+        eventAddress.text = eventDetails.address
+        eventGenre.text = eventDetails.genre
+        eventPrice.text = eventDetails.price
+        eventArtists.text = eventDetails.artists
+        
+    }
 
     
 

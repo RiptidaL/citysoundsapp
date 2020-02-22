@@ -72,6 +72,28 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "goToEventDetails", sender: self)
+        
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goToEventDetails" {
+            let destinationVC = segue.destination as! EventDetailViewController
+            let indexPath = self.eventList.indexPathForSelectedRow
+            destinationVC.eventDetails = self.eventArray[indexPath!.row]
+        }
+        
+    }
+    
+    
+    
+    
     func retrieveDatafromFirebase() {
         
         //Function from the Firebase Docs - "snapshot" is a variable that contains the returned value of what is in the database under the "upcoming" node
@@ -90,6 +112,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             reference.genre = data!["Genre"] as! String
             reference.price = data!["Price"] as! String
             reference.time = data!["Time"] as! String
+            reference.artists = data!["Artists"] as! String
+            reference.address = data!["Address"] as! String
             
             self.eventArray.append(reference)
             self.eventList.reloadData()

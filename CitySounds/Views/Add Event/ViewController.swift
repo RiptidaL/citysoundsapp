@@ -92,7 +92,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    // Check the field and validate that the data is correct.
+    func validateField() -> String? {
+            
+        // Check that all fields are filled in
+        if eventName.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        eventLocation.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        eventDate.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        eventTime.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        eventGenre.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        eventLocationAddress.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        eventPrice.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+        eventArtists.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            return "Please fill in all fields."
+        }
+        
+        
+        return nil
+    }
+    
+    
+    
+    
+    
+
+    
+    
     @IBAction func submitPressed(_ sender: Any) {
+        
         let uniqueID = UUID().uuidString
         self.ref.child("upcoming").child(uniqueID).setValue(["Name":eventName.text,
                                                              "Location": eventLocation.text,
@@ -105,8 +133,35 @@ class ViewController: UIViewController, UITextFieldDelegate {
         ])
         
         
-        self.performSegue(withIdentifier: "goToEvents", sender: sender)
+        showEventAddedText()
+        eraseTextFields()
+        
+        DispatchQueue.main.asyncAfter(deadline:.now() + 1.0, execute: {
+           self.performSegue(withIdentifier:"goToEvents",sender: self)
+        })
+        
+        
+        
     }
+    
+    func showEventAddedText() {
+        
+        errorLabel.text = "Event has been added!"
+        errorLabel.alpha = 1
+    }
+    
+    func eraseTextFields() {
+        eventName.text = ""
+        eventLocation.text = ""
+        eventDate.text = ""
+        eventTime.text = ""
+        eventGenre.text = ""
+        eventLocationAddress.text = ""
+        eventPrice.text = ""
+        eventArtists.text = ""
+    }
+    
+    
     
     
     

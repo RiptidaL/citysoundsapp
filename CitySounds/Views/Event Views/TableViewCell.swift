@@ -10,13 +10,22 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var eventNameCellLabel: UILabel!
-    @IBOutlet weak var eventLocationCellLabel: UILabel!
-    @IBOutlet weak var eventDateCell: UILabel!
-    @IBOutlet weak var eventPicture: UIImageView!
-    @IBOutlet weak var eventGenreCellLabel: UILabel!
-    @IBOutlet weak var eventTimeCellLabel: UILabel!
-    @IBOutlet weak var eventPriceCellLabel: UILabel!
+//    @IBOutlet weak var eventNameCellLabel: UILabel!
+//    @IBOutlet weak var eventLocationCellLabel: UILabel!
+//    @IBOutlet weak var eventDateCell: UILabel!
+//    @IBOutlet weak var eventPicture: UIImageView!
+//    @IBOutlet weak var eventGenreCellLabel: UILabel!
+//    @IBOutlet weak var eventTimeCellLabel: UILabel!
+//    @IBOutlet weak var eventPriceCellLabel: UILabel!
+    
+
+    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var eventName: UILabel!
+    @IBOutlet weak var eventLocation: UILabel!
+    @IBOutlet weak var eventGenre: UILabel!
+    
+    
+    
     
     
     

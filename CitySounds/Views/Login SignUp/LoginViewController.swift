@@ -48,7 +48,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         
         // small nav title
-        navigationItem.largeTitleDisplayMode = .never
+        //navigationItem.largeTitleDisplayMode = .never
         
         
         setUpElements()

@@ -28,7 +28,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
            
         self.navigationItem.setHidesBackButton(true, animated: true)
-        navigationItem.largeTitleDisplayMode = .always
+        //navigationItem.largeTitleDisplayMode = .never
         
         eventList.delegate = self
         eventList.dataSource = self
@@ -51,12 +51,18 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         eventList.rowHeight = 250
         let cell = eventList.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        cell.eventNameCellLabel.text = eventArray[indexPath.row].name
-        cell.eventLocationCellLabel.text = eventArray[indexPath.row].location
-        cell.eventDateCell.text = eventArray[indexPath.row].date
-        cell.eventGenreCellLabel.text = eventArray[indexPath.row].genre
-        cell.eventTimeCellLabel.text = eventArray[indexPath.row].time
-        cell.eventPriceCellLabel.text = eventArray[indexPath.row].price
+//        cell.eventNameCellLabel.text = eventArray[indexPath.row].name
+//        cell.eventLocationCellLabel.text = eventArray[indexPath.row].location
+//        cell.eventDateCell.text = eventArray[indexPath.row].date
+//        cell.eventGenreCellLabel.text = eventArray[indexPath.row].genre
+//        cell.eventTimeCellLabel.text = eventArray[indexPath.row].time
+//        cell.eventPriceCellLabel.text = eventArray[indexPath.row].price
+        
+        
+        cell.eventName.text = eventArray[indexPath.row].name
+        cell.eventLocation.text = eventArray[indexPath.row].location
+        cell.eventGenre.text = eventArray[indexPath.row].genre
+        
         
         
         return cell

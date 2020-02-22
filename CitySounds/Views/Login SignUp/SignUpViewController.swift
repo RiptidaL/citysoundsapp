@@ -46,7 +46,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         
         // small nav title
-        navigationItem.largeTitleDisplayMode = .never
+        //navigationItem.largeTitleDisplayMode = .never
         
         
         setUpElements()
@@ -129,7 +129,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-            
             // Create user
             Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
                 
@@ -143,7 +142,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                     // User was created successfully, now store information
                     let db = Firestore.firestore()
                     
-                    db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid": result!.user.uid  ]) { (error) in
+                    db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "organizer":"no", "admin": "no", "uid": result!.user.uid  ]) { (error) in
                         
                         if error != nil {
                             // Show error message

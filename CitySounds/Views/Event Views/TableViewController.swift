@@ -15,7 +15,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var eventList: UITableView!
     
-
+    @IBOutlet weak var searchEvents: UISearchBar!
+    
     
     
     
@@ -26,9 +27,15 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-           
+          
+        
+        
+        
+        // Hide nav back button
         self.navigationItem.setHidesBackButton(true, animated: true)
+        
         //navigationItem.largeTitleDisplayMode = .never
+        
         
         eventList.delegate = self
         eventList.dataSource = self
@@ -43,20 +50,16 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
+
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eventArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        eventList.rowHeight = 250
+        eventList.rowHeight = 100
         let cell = eventList.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-//        cell.eventNameCellLabel.text = eventArray[indexPath.row].name
-//        cell.eventLocationCellLabel.text = eventArray[indexPath.row].location
-//        cell.eventDateCell.text = eventArray[indexPath.row].date
-//        cell.eventGenreCellLabel.text = eventArray[indexPath.row].genre
-//        cell.eventTimeCellLabel.text = eventArray[indexPath.row].time
-//        cell.eventPriceCellLabel.text = eventArray[indexPath.row].price
         
         
         cell.eventName.text = eventArray[indexPath.row].name
@@ -95,7 +98,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
-
+    
+    
+    
 
 
 }

@@ -154,8 +154,8 @@
 		D2F857F323FE6AAF008A0195 /* Event Views */ = {
 			isa = PBXGroup;
 			children = (
-				D278D16323EF94550061495A /* TableViewCell.swift */,
 				D278D16123EF93510061495A /* TableViewController.swift */,
+				D278D16323EF94550061495A /* TableViewCell.swift */,
 				D2F857F823FF7D11008A0195 /* EventDetailViewController.swift */,
 			);
 			path = "Event Views";

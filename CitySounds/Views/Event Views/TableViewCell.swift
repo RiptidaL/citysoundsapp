@@ -23,6 +23,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventLocation: UILabel!
     @IBOutlet weak var eventGenre: UILabel!
+    @IBOutlet weak var eventDate: UILabel!
     
     
     

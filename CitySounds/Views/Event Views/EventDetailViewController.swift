@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 class EventDetailViewController: UIViewController {
 
-    @IBOutlet weak var eventName: UILabel!
+   
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventTime: UILabel!
     @IBOutlet weak var eventLocation: UILabel!
@@ -31,12 +31,16 @@ class EventDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        // Set navigation title to event's name
+//        self.title = eventDetails.name
+        
+        // Retrieve event details
         getEventDetails()
         
         
         
       
-//        retrieveDatafromFirebase()
         
         
         
@@ -45,7 +49,7 @@ class EventDetailViewController: UIViewController {
 
     func getEventDetails() {
         
-        eventName.text = eventDetails.name
+        self.title = eventDetails.name
         eventDate.text = eventDetails.date
         eventTime.text = eventDetails.time
         eventLocation.text = eventDetails.location

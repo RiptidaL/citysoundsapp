@@ -18,6 +18,7 @@ class Event {
     var price: String = ""
     var artists: String = ""
     var genre: String = ""
+    var sortDate: String = ""
     
     
 }

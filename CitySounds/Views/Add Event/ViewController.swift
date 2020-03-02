@@ -24,7 +24,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var eventArtists: UITextField!
     @IBOutlet weak var eventTime: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    
+    @IBOutlet weak var uploadImageButton: UIButton!
+    
+    
     @IBOutlet weak var submitEvent: UIButton!
+    
     
     
     
@@ -46,19 +51,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         
+        
+        
+        // Setup date picker toolbar with button
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(title: "Done",style: .done, target: self, action: #selector(onClickDoneButton))
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(onClickDoneButton))
         toolBar.setItems([space, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         toolBar.sizeToFit()
         eventDate.inputAccessoryView = toolBar
         doneButton.tintColor = .red
 
-        
-        
         
         
         // Date Picker
@@ -92,6 +98,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         setUpElements()
         
     }
+    
+   
     
     
     
@@ -134,6 +142,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         Utilities.styleTextField(eventArtists)
         Utilities.styleTextField(eventTime)
         Utilities.styleFilledButton(submitEvent)
+        Utilities.styleHollowButton(uploadImageButton)
         
         
     }
@@ -306,6 +315,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @objc func onClickDoneButton() {
         
         self.view.endEditing(true)
+        
+    }
+    
+    
+    
+    func setUpEventPhoto() {
+        
+        uploadImageButton.clipsToBounds = true
+        uploadImageButton.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
+        uploadImageButton.addGestureRecognizer(tapGesture)
+        
+        
+    }
+    
+    @objc func presentPicker() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+        self.present(picker, animated: true, completion: nil)
+        
         
     }
     

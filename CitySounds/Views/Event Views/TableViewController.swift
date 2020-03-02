@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 import Firebase
 import FirebaseDatabase
+import FirebaseFirestore
 
 
-class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationBarDelegate {
     
     @IBOutlet weak var eventList: UITableView!
-    @IBOutlet weak var searchEvents: UISearchBar!
-  
+
+ 
     
 
     
@@ -28,18 +29,13 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
           
-        // Get current date as a string to filter out old events
-        
-        
+        loggedInCheck()
 
-        
-        
+
+
         // Hide nav back button
         self.navigationItem.setHidesBackButton(true, animated: true)
         
@@ -115,7 +111,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     
-    
+    // Retreieve Firestore Data
     func retrieveDatafromFirebase() {
         
         let now = Date()
@@ -185,10 +181,11 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         
+        
     }
     
     
-    
+   
     
     
     
@@ -197,17 +194,63 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         eventList.reloadData()
     }
     
+    
+    
+      
+        
+    func loggedInCheck() {
+        
+        if Auth.auth().currentUser != nil {
+          
+            // User is signed in.
+            
+            // Left Button
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Profile", style:  UIBarButtonItem.Style.plain, target: self, action: #selector(TableViewController.goToUserProfile(_:)))
+            
+            // Right Button
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Event", style:  UIBarButtonItem.Style.plain, target: self, action: #selector(TableViewController.goToAddEvents(_:)))
+
+            print("You are logged in")
+            
+            
+        } else {
+          
+            // No user is signed in.
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Login", style:  UIBarButtonItem.Style.plain, target: self, action: #selector(TableViewController.goToLogin(_:)))
+            
+            
+            print("You are not logged in")
+        
+        }
+    }
+        
+    
+    
+    
+    
+    
+    
   
+    @objc func goToUserProfile(_ sender: Any) {
+        
+        performSegue(withIdentifier: "goToUserProfile", sender: self)
+        
+    }
     
+    @objc func goToLogin(_ sender: Any) {
+        
+        performSegue(withIdentifier: "goToLogin", sender: self)
+    }
     
-    
-    
-    
-    
+    @objc func goToAddEvents(_ sender: Any) {
+        
+        performSegue(withIdentifier: "goToAddEvents", sender: self)
+    }
     
     
 
 
 }
+
 
 

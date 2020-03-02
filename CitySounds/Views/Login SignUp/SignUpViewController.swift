@@ -113,6 +113,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signUpTapped(_ sender: Any) {
         
+        
         // Validate field
         let error = validateField()
         
@@ -141,6 +142,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     // User was created successfully, now store information
                     let db = Firestore.firestore()
+                
                     
                     db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName,"email":email, "organizer":"no", "admin": "no", "uid": result!.user.uid  ]) { (error) in
                         
@@ -150,6 +152,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                         }
                         
                     }
+                    
+                    
+                    
                 
                      // Transition to home screen
                     self.performSegue(withIdentifier: "goToEvents", sender: sender)

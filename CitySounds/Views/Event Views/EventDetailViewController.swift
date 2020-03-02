@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import MapKit
+import CoreLocation
 
 class EventDetailViewController: UIViewController {
 
@@ -21,10 +23,12 @@ class EventDetailViewController: UIViewController {
     @IBOutlet weak var eventPrice: UILabel!
     @IBOutlet weak var eventArtists: UILabel!
         
-     
-   var eventDetails = Event()
+    @IBOutlet var mapView: MKMapView!
     
+   
+    var eventDetails = Event()
     
+
     
     
     
@@ -37,7 +41,7 @@ class EventDetailViewController: UIViewController {
         
         // Retrieve event details
         getEventDetails()
-        
+//        getMapView()
         
         
       
@@ -58,8 +62,36 @@ class EventDetailViewController: UIViewController {
         eventPrice.text = eventDetails.price
         eventArtists.text = eventDetails.artists
         
+        
+    
     }
+    
+//    func getMapView() {
+//        let geocoder = CLGeocoder()
+//        let location = eventDetails.address
+//
+//        geocoder.geocodeAddressString(location) { [weak self] placemarks, error in
+//        if let placemark = placemarks?.first, let location = placemark.location {
+//
+//            let mark = MKPlacemark(placemark: placemark)
+//
+//            if var region = self?.mapView.region {
+//                region.center = location.coordinate
+//                region.span.longitudeDelta /= 8.0
+//                region.span.latitudeDelta /= 8.0
+//                self?.mapView.setRegion(region, animated: true)
+//                self?.mapView.addAnnotation(mark)
+//            }
+//            }
+//
+//        }
+//
+//
+//
+//
+//    }
 
+    
     
 
 }

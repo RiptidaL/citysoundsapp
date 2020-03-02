@@ -24,6 +24,10 @@
 		D2F857F123FE6A8A008A0195 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F857F023FE6A8A008A0195 /* SignUpViewController.swift */; };
 		D2F857F623FE7D26008A0195 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F857F523FE7D25008A0195 /* Constants.swift */; };
 		D2F857F923FF7D11008A0195 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F857F823FF7D11008A0195 /* EventDetailViewController.swift */; };
+		D2F857FE2402F1C6008A0195 /* welcome.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D2F857FD2402F1C5008A0195 /* welcome.mp4 */; };
+		D2F858002402FA5B008A0195 /* welcome2.mov in Resources */ = {isa = PBXBuildFile; fileRef = D2F857FF2402FA5B008A0195 /* welcome2.mov */; };
+		D2F8580324030E47008A0195 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F8580224030E47008A0195 /* UserProfileViewController.swift */; };
+		D2F858052408E367008A0195 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F858042408E367008A0195 /* CurrentUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		D2F857F023FE6A8A008A0195 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D2F857F523FE7D25008A0195 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D2F857F823FF7D11008A0195 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		D2F857FD2402F1C5008A0195 /* welcome.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = welcome.mp4; path = videos/welcome.mp4; sourceTree = SOURCE_ROOT; };
+		D2F857FF2402FA5B008A0195 /* welcome2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = welcome2.mov; path = videos/welcome2.mov; sourceTree = SOURCE_ROOT; };
+		D2F8580224030E47008A0195 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		D2F858042408E367008A0195 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,7 @@
 		D278D13D23EF823E0061495A = {
 			isa = PBXGroup;
 			children = (
+				D2F857FC2402F186008A0195 /* videofiles */,
 				D278D16B23F09C630061495A /* Remote */,
 				D278D14823EF823E0061495A /* CitySounds */,
 				D278D14723EF823E0061495A /* Products */,
@@ -116,6 +125,7 @@
 		D2F857E523FE4153008A0195 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D2F8580124030E20008A0195 /* User Profile */,
 				D2F857F723FF5FA7008A0195 /* Navigation Controller */,
 				D2F857F223FE6A9A008A0195 /* Add Event */,
 				D2F857F323FE6AAF008A0195 /* Event Views */,
@@ -127,9 +137,10 @@
 		D2F857E623FE4170008A0195 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D2F857F523FE7D25008A0195 /* Constants.swift */,
 				D2F857E823FE4CFE008A0195 /* Utilities.swift */,
 				D278D16923F098410061495A /* Event.swift */,
-				D2F857F523FE7D25008A0195 /* Constants.swift */,
+				D2F858042408E367008A0195 /* CurrentUser.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -176,6 +187,23 @@
 			children = (
 			);
 			path = "Navigation Controller";
+			sourceTree = "<group>";
+		};
+		D2F857FC2402F186008A0195 /* videofiles */ = {
+			isa = PBXGroup;
+			children = (
+				D2F857FD2402F1C5008A0195 /* welcome.mp4 */,
+				D2F857FF2402FA5B008A0195 /* welcome2.mov */,
+			);
+			path = videofiles;
+			sourceTree = "<group>";
+		};
+		D2F8580124030E20008A0195 /* User Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D2F8580224030E47008A0195 /* UserProfileViewController.swift */,
+			);
+			path = "User Profile";
 			sourceTree = "<group>";
 		};
 		D4DD5CD7ED5C2AE43D7A5848 /* Frameworks */ = {
@@ -246,9 +274,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F857FE2402F1C6008A0195 /* welcome.mp4 in Resources */,
 				D278D16023EF8AA00061495A /* GoogleService-Info.plist in Resources */,
 				D278D15623EF82420061495A /* LaunchScreen.storyboard in Resources */,
 				D278D15323EF82420061495A /* Assets.xcassets in Resources */,
+				D2F858002402FA5B008A0195 /* welcome2.mov in Resources */,
 				D278D15123EF823E0061495A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,9 +340,11 @@
 				D2F857F123FE6A8A008A0195 /* SignUpViewController.swift in Sources */,
 				D2F857F923FF7D11008A0195 /* EventDetailViewController.swift in Sources */,
 				D278D14A23EF823E0061495A /* AppDelegate.swift in Sources */,
+				D2F8580324030E47008A0195 /* UserProfileViewController.swift in Sources */,
 				D278D14C23EF823E0061495A /* SceneDelegate.swift in Sources */,
 				D278D16A23F098410061495A /* Event.swift in Sources */,
 				D2F857E923FE4CFE008A0195 /* Utilities.swift in Sources */,
+				D2F858052408E367008A0195 /* CurrentUser.swift in Sources */,
 				D278D16223EF93510061495A /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
